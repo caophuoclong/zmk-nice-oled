@@ -104,13 +104,14 @@ static void set_animation(lv_obj_t *animing, struct wpm_bongo_cat_status_state s
 
     if (state.wpm < 5) {
         new_state = anim_state_idle;
-    } else if (state.wpm < CONFIG_NICE_OLED_WIDGET_BONGO_SLOW) {
+    } else if (state.wpm < 30) {
         new_state = anim_state_slow;
-    } else if (state.wpm < CONFIG_NICE_OLED_WIDGET_BONGO_MID) {
+    } else if (state.wpm < 70) {
         new_state = anim_state_mid;
     } else {
         new_state = anim_state_fast;
     }
+
 
     if (new_state != current_anim_state) {
         current_anim_state = new_state;
