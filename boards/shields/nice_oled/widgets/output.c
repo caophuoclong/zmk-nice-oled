@@ -43,7 +43,12 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
     !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ALL)
     lv_draw_label_dsc_t label_dsc;
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_16, LV_TEXT_ALIGN_LEFT);
-    lv_canvas_draw_text(canvas, 0, 1, 25, &label_dsc, "SIG");
+    
+    if (state->locked) {
+        lv_canvas_draw_text(canvas, 0, 1, 35, &label_dsc, "LOCK");
+    } else {
+        lv_canvas_draw_text(canvas, 0, 1, 25, &label_dsc, "SIG");
+    }
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_OUTPUT_BACKGROUND)
     lv_draw_rect_dsc_t rect_white_dsc;
@@ -52,6 +57,15 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
 #endif
 
 #else
+    if (state->locked) {
+        lv_draw_label_dsc_t label_dsc;
+#if IS_ENABLED(CONFIG_NICE_EPAPER_ON)
+        init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_16, LV_TEXT_ALIGN_LEFT);
+#else
+        init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_12, LV_TEXT_ALIGN_LEFT);
+#endif
+        lv_canvas_draw_text(canvas, 0, 1, 35, &label_dsc, "LOCK");
+    }
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_OUTPUT_BACKGROUND)
     lv_draw_rect_dsc_t rect_white_dsc;
@@ -87,3 +101,4 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
     }
 #endif
 }
+

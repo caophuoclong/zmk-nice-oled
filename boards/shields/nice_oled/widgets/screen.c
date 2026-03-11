@@ -17,6 +17,8 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/keymap.h>
 #include <zmk/usb.h>
 #include <zmk/wpm.h>
+#include <zmk/studio/core.h>
+
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ALL) ||                     \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ONLY) ||                    \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_AND_CENTRAL)
@@ -1098,12 +1100,39 @@ static void wpm_status_update_cb(struct wpm_status_state state) {
 
 struct wpm_status_state wpm_status_get_state(const zmk_event_t *eh) {
     return (struct wpm_status_state){.wpm = zmk_wpm_get_state()};
-};
+}
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_wpm_status, struct wpm_status_state, wpm_status_update_cb,
                             wpm_status_get_state)
 ZMK_SUBSCRIPTION(widget_wpm_status, zmk_wpm_state_changed);
-#endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM)
+#endif
+
+/**
+ * ZMK Studio Lock status
+ */
+
+static void set_lock_status(struct zmk_widget_screen *widget, bool locked) {
+    widget->state.locked = locked;
+    draw_canvas(widget->obj, widget->cbuf, &widget->state);
+}
+
+static void lock_status_update_cb(bool locked) {
+    struct zmk_widget_screen *widget;
+    SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) { set_lock_status(widget, locked); }
+}
+
+static bool lock_status_get_state(const zmk_event_t *eh) {
+    const struct zmk_studio_core_lock_state_changed *ev = as_zmk_studio_core_lock_state_changed(eh);
+    if (ev) {
+        return ev->state == ZMK_STUDIO_CORE_LOCK_STATE_LOCKED;
+    }
+    return zmk_studio_core_get_lock_state() == ZMK_STUDIO_CORE_LOCK_STATE_LOCKED;
+}
+
+
+ZMK_DISPLAY_WIDGET_LISTENER(widget_lock_status, bool, lock_status_update_cb, lock_status_get_state)
+ZMK_SUBSCRIPTION(widget_lock_status, zmk_studio_core_lock_state_changed);
+ // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM)
 
 /**
  * Initialization
@@ -1156,6 +1185,9 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA)
     zmk_widget_modifiers_init(&modifiers_widget, canvas); // Inicializar el widget de modifiers
 #endif
+
+    widget_lock_status_init();
+
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED) // <-- NUEVO
     widget_mods_status_init(); // <-- Inicializa el nuevo listener
