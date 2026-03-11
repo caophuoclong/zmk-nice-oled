@@ -57,73 +57,77 @@ static void set_modifiers_text(lv_obj_t *label, struct modifiers_state state) {
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_VERTICAL)
 
-LV_IMG_DECLARE(alt_0);
-LV_IMG_DECLARE(alt_white_0);
-LV_IMG_DECLARE(cmd_0);
-LV_IMG_DECLARE(cmd_white_0);
-LV_IMG_DECLARE(control_0);
-LV_IMG_DECLARE(control_white_0);
-LV_IMG_DECLARE(opt_0);
-LV_IMG_DECLARE(opt_white_0);
-LV_IMG_DECLARE(shift_0);
-LV_IMG_DECLARE(shift_white_0);
-LV_IMG_DECLARE(win_0);
-LV_IMG_DECLARE(win_white_0);
+LV_IMAGE_DECLARE(alt_0);
+LV_IMAGE_DECLARE(alt_white_0);
+LV_IMAGE_DECLARE(cmd_0);
+LV_IMAGE_DECLARE(cmd_white_0);
+LV_IMAGE_DECLARE(control_0);
+LV_IMAGE_DECLARE(control_white_0);
+LV_IMAGE_DECLARE(opt_0);
+LV_IMAGE_DECLARE(opt_white_0);
+LV_IMAGE_DECLARE(shift_0);
+LV_IMAGE_DECLARE(shift_white_0);
+LV_IMAGE_DECLARE(win_0);
+LV_IMAGE_DECLARE(win_white_0);
+
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_WINDOWS)
 
-const lv_img_dsc_t *symbol_imgs_alt[] = {&alt_0, &alt_white_0};
-const lv_img_dsc_t *symbol_imgs_win[] = {&win_0, &win_white_0};
-const lv_img_dsc_t *symbol_imgs_control[] = {&control_0, &control_white_0};
-const lv_img_dsc_t *symbol_imgs_shift[] = {&shift_0, &shift_white_0};
+const lv_image_dsc_t *symbol_imgs_alt[] = {&alt_0, &alt_white_0};
+const lv_image_dsc_t *symbol_imgs_win[] = {&win_0, &win_white_0};
+const lv_image_dsc_t *symbol_imgs_control[] = {&control_0, &control_white_0};
+const lv_image_dsc_t *symbol_imgs_shift[] = {&shift_0, &shift_white_0};
 
 #else
 
-const lv_img_dsc_t *symbol_imgs_alt[] = {&opt_0, &opt_white_0};
-const lv_img_dsc_t *symbol_imgs_win[] = {&cmd_0, &cmd_white_0};
-const lv_img_dsc_t *symbol_imgs_control[] = {&control_0, &control_white_0};
-const lv_img_dsc_t *symbol_imgs_shift[] = {&shift_0, &shift_white_0};
+const lv_image_dsc_t *symbol_imgs_alt[] = {&opt_0, &opt_white_0};
+const lv_image_dsc_t *symbol_imgs_win[] = {&cmd_0, &cmd_white_0};
+const lv_image_dsc_t *symbol_imgs_control[] = {&control_0, &control_white_0};
+const lv_image_dsc_t *symbol_imgs_shift[] = {&shift_0, &shift_white_0};
 
 #endif
+
 #define MODIFIERS_USE_SYMBOLS 1
 
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT)
 
-LV_IMG_DECLARE(bongo_cat_double_tap1_06);
-LV_IMG_DECLARE(bongo_cat_tap1_03);
-LV_IMG_DECLARE(bongo_cat_tap2_03);
-LV_IMG_DECLARE(bongo_cat_double_tap2_02);
-LV_IMG_DECLARE(bongo_cat_double_tap1_03);
+LV_IMAGE_DECLARE(bongo_cat_double_tap1_06);
+LV_IMAGE_DECLARE(bongo_cat_tap1_03);
+LV_IMAGE_DECLARE(bongo_cat_tap2_03);
+LV_IMAGE_DECLARE(bongo_cat_double_tap2_02);
+LV_IMAGE_DECLARE(bongo_cat_double_tap1_03);
 
 // Idle: sitting bongo cat
-const lv_img_dsc_t *bongo_imgs_idle[] = {&bongo_cat_double_tap1_06};
+const lv_image_dsc_t *bongo_imgs_idle[] = {&bongo_cat_double_tap1_06};
 // GUI/Cmd: tap left
-const lv_img_dsc_t *bongo_imgs_gui[] = {&bongo_cat_tap1_03, &bongo_cat_tap2_03};
+const lv_image_dsc_t *bongo_imgs_gui[] = {&bongo_cat_tap1_03, &bongo_cat_tap2_03};
 // Alt: tap right
-const lv_img_dsc_t *bongo_imgs_alt[] = {&bongo_cat_tap2_03, &bongo_cat_tap1_03};
+const lv_image_dsc_t *bongo_imgs_alt[] = {&bongo_cat_tap2_03, &bongo_cat_tap1_03};
 // Ctrl: fast double tap
-const lv_img_dsc_t *bongo_imgs_ctrl[] = {&bongo_cat_double_tap2_02, &bongo_cat_double_tap1_03};
+const lv_image_dsc_t *bongo_imgs_ctrl[] = {&bongo_cat_double_tap2_02, &bongo_cat_double_tap1_03};
 // Shift: alternating taps
-const lv_img_dsc_t *bongo_imgs_shift[] = {&bongo_cat_double_tap1_03, &bongo_cat_double_tap2_02};
+const lv_image_dsc_t *bongo_imgs_shift[] = {&bongo_cat_double_tap1_03, &bongo_cat_double_tap2_02};
+
 
 static lv_obj_t *bongo_imgs = NULL; // Variable estática para almacenar el objeto animado
 #define MODIFIERS_USE_BONGO_CAT 1
 
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA)
 
-LV_IMG_DECLARE(dog_sit1_90);
-LV_IMG_DECLARE(dog_sit2_90);
-LV_IMG_DECLARE(dog_walk1_90);
-LV_IMG_DECLARE(dog_walk2_90);
-LV_IMG_DECLARE(dog_run1_90);
-LV_IMG_DECLARE(dog_run2_90);
-LV_IMG_DECLARE(dog_sneak1_90);
-LV_IMG_DECLARE(dog_sneak2_90);
+LV_IMAGE_DECLARE(dog_sit1_90);
+LV_IMAGE_DECLARE(dog_sit2_90);
+LV_IMAGE_DECLARE(dog_walk1_90);
+LV_IMAGE_DECLARE(dog_walk2_90);
+LV_IMAGE_DECLARE(dog_run1_90);
+LV_IMAGE_DECLARE(dog_run2_90);
+LV_IMAGE_DECLARE(dog_sneak1_90);
+LV_IMAGE_DECLARE(dog_sneak2_90);
 
-const lv_img_dsc_t *luna_imgs_sit_90[] = {&dog_sit1_90, &dog_sit2_90};
-const lv_img_dsc_t *luna_imgs_walk_90[] = {&dog_walk1_90, &dog_walk2_90};
-const lv_img_dsc_t *luna_imgs_run_90[] = {&dog_run1_90, &dog_run2_90};
-const lv_img_dsc_t *luna_imgs_sneak_90[] = {&dog_sneak1_90, &dog_sneak2_90};
+const lv_image_dsc_t *luna_imgs_sit_90[] = {&dog_sit1_90, &dog_sit2_90};
+const lv_image_dsc_t *luna_imgs_walk_90[] = {&dog_walk1_90, &dog_walk2_90};
+const lv_image_dsc_t *luna_imgs_run_90[] = {&dog_run1_90, &dog_run2_90};
+const lv_image_dsc_t *luna_imgs_sneak_90[] = {&dog_sneak1_90, &dog_sneak2_90};
+
 
 static lv_obj_t *luna_imgs = NULL; // Variable estática para almacenar el objeto animado
 #define MODIFIERS_USE_LUNA 1
@@ -154,89 +158,91 @@ static void set_modifiers_text(lv_obj_t *label, struct modifiers_state ignored) 
     const int base_y = CONFIG_NICE_OLED_WIDGET_MODIFIERS_CUSTOM_Y;
 
     if (!fixed_ctl) {
-        fixed_ctl = lv_img_create(label);
+        fixed_ctl = lv_image_create(label);
         lv_obj_align(fixed_ctl, LV_ALIGN_TOP_LEFT, base_x + 78, base_y - 44);
-        lv_img_set_src(fixed_ctl, symbol_imgs_control[0]);
+        lv_image_set_src(fixed_ctl, symbol_imgs_control[0]);
     }
     if (!fixed_shf) {
-        fixed_shf = lv_img_create(label);
+        fixed_shf = lv_image_create(label);
         lv_obj_align(fixed_shf, LV_ALIGN_TOP_LEFT, base_x + 65, base_y - 44);
-        lv_img_set_src(fixed_shf, symbol_imgs_shift[0]);
+        lv_image_set_src(fixed_shf, symbol_imgs_shift[0]);
     }
     if (!fixed_alt) {
-        fixed_alt = lv_img_create(label);
+        fixed_alt = lv_image_create(label);
         lv_obj_align(fixed_alt, LV_ALIGN_TOP_LEFT, base_x + 51, base_y - 44);
-        lv_img_set_src(fixed_alt, symbol_imgs_alt[0]);
+        lv_image_set_src(fixed_alt, symbol_imgs_alt[0]);
     }
     if (!fixed_win) {
-        fixed_win = lv_img_create(label);
+        fixed_win = lv_image_create(label);
         lv_obj_align(fixed_win, LV_ALIGN_TOP_LEFT, base_x + 37, base_y - 44);
-        lv_img_set_src(fixed_win, symbol_imgs_win[0]);
+        lv_image_set_src(fixed_win, symbol_imgs_win[0]);
     }
+
 
     /* Actualizar la fuente de cada imagen según el estado de cada modificador */
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_WINDOWS)
     /* Para Windows/Command: si alguno de los mods está activo, usar la imagen blanca */
-    lv_img_set_src(fixed_win,
+    lv_image_set_src(fixed_win,
                    (mods & (MOD_LGUI | MOD_RGUI)) ? symbol_imgs_win[1] : symbol_imgs_win[0]);
 #else
     /* En caso de no usar la opción WINDOWS, se aplicaría la lógica correspondiente (por ejemplo con
      * symbol_imgs_win definidas como cmd) */
-    lv_img_set_src(fixed_win,
+    lv_image_set_src(fixed_win,
                    (mods & (MOD_LGUI | MOD_RGUI)) ? symbol_imgs_win[1] : symbol_imgs_win[0]);
 #endif
 
-    lv_img_set_src(fixed_alt,
+    lv_image_set_src(fixed_alt,
                    (mods & (MOD_LALT | MOD_RALT)) ? symbol_imgs_alt[1] : symbol_imgs_alt[0]);
-    lv_img_set_src(fixed_ctl, (mods & (MOD_LCTL | MOD_RCTL)) ? symbol_imgs_control[1]
+    lv_image_set_src(fixed_ctl, (mods & (MOD_LCTL | MOD_RCTL)) ? symbol_imgs_control[1]
                                                              : symbol_imgs_control[0]);
-    lv_img_set_src(fixed_shf,
+    lv_image_set_src(fixed_shf,
                    (mods & (MOD_LSFT | MOD_RSFT)) ? symbol_imgs_shift[1] : symbol_imgs_shift[0]);
+
 
 #elif defined(MODIFIERS_USE_BONGO_CAT)
     /* En modo "bongo cat" se utiliza la lógica de animación */
     if (mods & (MOD_LGUI | MOD_RGUI)) {
         if (!bongo_imgs) {
-            bongo_imgs = lv_animimg_create(label);
+            bongo_imgs = lv_image_create(label);
             lv_obj_center(bongo_imgs);
-            lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_gui, 2);
-            lv_animimg_set_duration(bongo_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
-            lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(bongo_imgs);
+            // lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_gui, 2);
+            // lv_animimg_set_duration(bongo_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(bongo_imgs);
+            lv_image_set_src(bongo_imgs, bongo_imgs_gui[0]); // Placeholder
             lv_obj_align(bongo_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_Y);
         }
     } else if (mods & (MOD_LALT | MOD_RALT)) {
         if (!bongo_imgs) {
-            bongo_imgs = lv_animimg_create(label);
+            bongo_imgs = lv_image_create(label);
             lv_obj_center(bongo_imgs);
-            lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_alt, 2);
-            lv_animimg_set_duration(bongo_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
-            lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(bongo_imgs);
+            // lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_alt, 2);
+            // lv_animimg_set_duration(bongo_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(bongo_imgs);
+            lv_image_set_src(bongo_imgs, bongo_imgs_alt[0]); // Placeholder
             lv_obj_align(bongo_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_Y);
         }
     } else if (mods & (MOD_LCTL | MOD_RCTL)) {
         if (!bongo_imgs) {
-            bongo_imgs = lv_animimg_create(label);
+            bongo_imgs = lv_image_create(label);
             lv_obj_center(bongo_imgs);
-            lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_ctrl, 2);
-            lv_animimg_set_duration(bongo_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
-            lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(bongo_imgs);
+            // lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_ctrl, 2);
+            // lv_animimg_set_duration(bongo_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(bongo_imgs);
+            lv_image_set_src(bongo_imgs, bongo_imgs_ctrl[0]); // Placeholder
             lv_obj_align(bongo_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_Y);
         }
     } else if (mods & (MOD_LSFT | MOD_RSFT)) {
         if (!bongo_imgs) {
-            bongo_imgs = lv_animimg_create(label);
+            bongo_imgs = lv_image_create(label);
             lv_obj_center(bongo_imgs);
-            lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_shift, 2);
-            lv_animimg_set_duration(bongo_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
-            lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(bongo_imgs);
+            // lv_animimg_set_src(bongo_imgs, (const void **)bongo_imgs_shift, 2);
+            // lv_animimg_set_duration(bongo_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_BONGO_CAT_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(bongo_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(bongo_imgs);
+            lv_image_set_src(bongo_imgs, bongo_imgs_shift[0]); // Placeholder
             lv_obj_align(bongo_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_Y);
         }
     } else {
@@ -246,50 +252,51 @@ static void set_modifiers_text(lv_obj_t *label, struct modifiers_state ignored) 
         }
     }
 
+
 #elif defined(MODIFIERS_USE_LUNA)
     /* En modo "luna" se utiliza la lógica de animación ya existente */
     if (mods & (MOD_LGUI | MOD_RGUI)) {
         if (!luna_imgs) {
-            luna_imgs = lv_animimg_create(label);
+            luna_imgs = lv_image_create(label);
             lv_obj_center(luna_imgs);
-            lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_sit_90, 2);
-            lv_animimg_set_duration(luna_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
-            lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(luna_imgs);
+            // lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_sit_90, 2);
+            // lv_animimg_set_duration(luna_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(luna_imgs);
+            lv_image_set_src(luna_imgs, luna_imgs_sit_90[0]); // Placeholder
             lv_obj_align(luna_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_Y);
         }
     } else if (mods & (MOD_LALT | MOD_RALT)) {
         if (!luna_imgs) {
-            luna_imgs = lv_animimg_create(label);
+            luna_imgs = lv_image_create(label);
             lv_obj_center(luna_imgs);
-            lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_walk_90, 2);
-            lv_animimg_set_duration(luna_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
-            lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(luna_imgs);
+            // lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_walk_90, 2);
+            // lv_animimg_set_duration(luna_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(luna_imgs);
+            lv_image_set_src(luna_imgs, luna_imgs_walk_90[0]); // Placeholder
             lv_obj_align(luna_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_Y);
         }
     } else if (mods & (MOD_LCTL | MOD_RCTL)) {
         if (!luna_imgs) {
-            luna_imgs = lv_animimg_create(label);
+            luna_imgs = lv_image_create(label);
             lv_obj_center(luna_imgs);
-            lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_run_90, 2);
-            lv_animimg_set_duration(luna_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
-            lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(luna_imgs);
+            // lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_run_90, 2);
+            // lv_animimg_set_duration(luna_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(luna_imgs);
+            lv_image_set_src(luna_imgs, luna_imgs_run_90[0]); // Placeholder
             lv_obj_align(luna_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_Y);
         }
     } else if (mods & (MOD_LSFT | MOD_RSFT)) {
         if (!luna_imgs) {
-            luna_imgs = lv_animimg_create(label);
+            luna_imgs = lv_image_create(label);
             lv_obj_center(luna_imgs);
-            lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_sneak_90, 2);
-            lv_animimg_set_duration(luna_imgs,
-                                    CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
-            lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
-            lv_animimg_start(luna_imgs);
+            // lv_animimg_set_src(luna_imgs, (const void **)luna_imgs_sneak_90, 2);
+            // lv_animimg_set_duration(luna_imgs, CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA_ANIMATION_MS);
+            // lv_animimg_set_repeat_count(luna_imgs, LV_ANIM_REPEAT_INFINITE);
+            // lv_animimg_start(luna_imgs);
+            lv_image_set_src(luna_imgs, luna_imgs_sneak_90[0]); // Placeholder
             lv_obj_align(luna_imgs, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_LUNA_CUSTOM_Y);
         }
     } else {
@@ -298,6 +305,7 @@ static void set_modifiers_text(lv_obj_t *label, struct modifiers_state ignored) 
             luna_imgs = NULL;
         }
     }
+
 
 #else
     // MODIFIERS_USE_NONE: No animation, no symbols

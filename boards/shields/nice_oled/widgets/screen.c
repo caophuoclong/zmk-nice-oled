@@ -261,38 +261,40 @@ struct mods_status_state {
 
 // Declaraciones de imágenes de símbolos reales (de modifiers_270.c)
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL)
-LV_IMG_DECLARE(control_0);
-LV_IMG_DECLARE(control_white_0);
-LV_IMG_DECLARE(shift_0);
-LV_IMG_DECLARE(shift_white_0);
-LV_IMG_DECLARE(opt_0);
-LV_IMG_DECLARE(opt_white_0);
-LV_IMG_DECLARE(alt_0);
-LV_IMG_DECLARE(alt_white_0);
-LV_IMG_DECLARE(cmd_0);
-LV_IMG_DECLARE(cmd_white_0);
-LV_IMG_DECLARE(win_0);
-LV_IMG_DECLARE(win_white_0);
+LV_IMAGE_DECLARE(control_0);
+LV_IMAGE_DECLARE(control_white_0);
+LV_IMAGE_DECLARE(shift_0);
+LV_IMAGE_DECLARE(shift_white_0);
+LV_IMAGE_DECLARE(opt_0);
+LV_IMAGE_DECLARE(opt_white_0);
+LV_IMAGE_DECLARE(alt_0);
+LV_IMAGE_DECLARE(alt_white_0);
+LV_IMAGE_DECLARE(cmd_0);
+LV_IMAGE_DECLARE(cmd_white_0);
+LV_IMAGE_DECLARE(win_0);
+LV_IMAGE_DECLARE(win_white_0);
 
 // Arrays de imágenes: [0] = normal, [1] = activo (blanco/invertido)
 // Orden: Control, Shift, Alt/Opt, Gui/Cmd/Win
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_WINDOWS)
 // Windows: Control, Shift, Alt, Win
-static const lv_img_dsc_t *mod_imgs_normal[4] = {&control_0, &shift_0, &alt_0, &win_0};
-static const lv_img_dsc_t *mod_imgs_active[4] = {&control_white_0, &shift_white_0, &alt_white_0, &win_white_0};
+static const lv_image_dsc_t *mod_imgs_normal[4] = {&control_0, &shift_0, &alt_0, &win_0};
+static const lv_image_dsc_t *mod_imgs_active[4] = {&control_white_0, &shift_white_0, &alt_white_0, &win_white_0};
 #else
 // macOS (default): Control, Shift, Option, Command
-static const lv_img_dsc_t *mod_imgs_normal[4] = {&control_0, &shift_0, &opt_0, &cmd_0};
-static const lv_img_dsc_t *mod_imgs_active[4] = {&control_white_0, &shift_white_0, &opt_white_0, &cmd_white_0};
+static const lv_image_dsc_t *mod_imgs_normal[4] = {&control_0, &shift_0, &opt_0, &cmd_0};
+static const lv_image_dsc_t *mod_imgs_active[4] = {&control_white_0, &shift_white_0, &opt_white_0, &cmd_white_0};
 #endif
 #endif // CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL
+
 
 // Función de dibujo para los modificadores
 static void draw_mods_status(lv_obj_t *canvas, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL)
     // --- MODO SÍMBOLOS (Imágenes reales) ---
-    lv_draw_img_dsc_t img_dsc;
-    lv_draw_img_dsc_init(&img_dsc);
+    lv_draw_image_dsc_t img_dsc;
+    lv_draw_image_dsc_init(&img_dsc);
+
 
     // Las imágenes son 14x14 píxeles
     const int img_size = 14;
@@ -322,9 +324,10 @@ static void draw_mods_status(lv_obj_t *canvas, const struct status_state *state)
         bool selected = (state->mod_state >> i) & 1 || (state->mod_state >> (i + 4)) & 1;
         int current_x = base_x;
         int current_y = base_y + i * (img_size + spacing);
-        const lv_img_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
-        lv_canvas_draw_img(canvas, current_x, current_y, img, &img_dsc);
+        const lv_image_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
+        lv_canvas_draw_image(canvas, current_x, current_y, img, &img_dsc);
     }
+
 
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_HOR)
     // --- HORIZONTAL ---
@@ -335,9 +338,10 @@ static void draw_mods_status(lv_obj_t *canvas, const struct status_state *state)
         bool selected = (state->mod_state >> i) & 1 || (state->mod_state >> (i + 4)) & 1;
         int current_x = base_x + i * (img_size + spacing);
         int current_y = base_y;
-        const lv_img_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
-        lv_canvas_draw_img(canvas, current_x, current_y, img, &img_dsc);
+        const lv_image_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
+        lv_canvas_draw_image(canvas, current_x, current_y, img, &img_dsc);
     }
+
 
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_BOX)
     // --- BOX (2x2) ---
@@ -355,9 +359,10 @@ static void draw_mods_status(lv_obj_t *canvas, const struct status_state *state)
         bool selected = (state->mod_state >> i) & 1 || (state->mod_state >> (i + 4)) & 1;
         int current_x = base_x + offsets_box[i][0];
         int current_y = base_y + offsets_box[i][1];
-        const lv_img_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
-        lv_canvas_draw_img(canvas, current_x, current_y, img, &img_dsc);
+        const lv_image_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
+        lv_canvas_draw_image(canvas, current_x, current_y, img, &img_dsc);
     }
+
 
 #else
     // --- DEFAULT: BOX fallback ---
@@ -375,9 +380,10 @@ static void draw_mods_status(lv_obj_t *canvas, const struct status_state *state)
         bool selected = (state->mod_state >> i) & 1 || (state->mod_state >> (i + 4)) & 1;
         int current_x = base_x + offsets_default[i][0];
         int current_y = base_y + offsets_default[i][1];
-        const lv_img_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
-        lv_canvas_draw_img(canvas, current_x, current_y, img, &img_dsc);
+        const lv_image_dsc_t *img = selected ? mod_imgs_active[i] : mod_imgs_normal[i];
+        lv_canvas_draw_image(canvas, current_x, current_y, img, &img_dsc);
     }
+
 #endif
 
 #else
@@ -1144,7 +1150,8 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
 
     lv_obj_t *canvas = lv_canvas_create(widget->obj);
     lv_obj_align(canvas, LV_ALIGN_TOP_LEFT, 0, 0);
-    lv_canvas_set_buffer(canvas, widget->cbuf, CANVAS_HEIGHT, CANVAS_HEIGHT, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(canvas, widget->cbuf, CANVAS_HEIGHT, CANVAS_HEIGHT, LV_COLOR_FORMAT_NATIVE);
+
 
     sys_slist_append(&widgets, &widget->node);
 

@@ -6,23 +6,25 @@
 #include <stdio.h>
 #endif // !IS_ENABLED(CONFIG_NICE_EPAPER_ON)
 
-LV_IMG_DECLARE(profiles);
+LV_IMAGE_DECLARE(profiles);
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_PROFILE_BIG)
 #define OFFSET_X 0
 #define OFFSET_Y 129
 
-LV_IMG_DECLARE(profile);
-LV_IMG_DECLARE(profile_active);
+LV_IMAGE_DECLARE(profile);
+LV_IMAGE_DECLARE(profile_active);
 #endif
+
 
 #if !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_PROFILE_BIG)
 static void draw_inactive_profiles(lv_obj_t *canvas, const struct status_state *state) {
-    lv_draw_img_dsc_t img_dsc;
-    lv_draw_img_dsc_init(&img_dsc);
+    lv_draw_image_dsc_t img_dsc;
+    lv_draw_image_dsc_init(&img_dsc);
 
-    lv_canvas_draw_img(canvas, CONFIG_NICE_OLED_WIDGET_PROFILE_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_PROFILE_CUSTOM_Y, &profiles, &img_dsc);
+    lv_canvas_draw_image(canvas, CONFIG_NICE_OLED_WIDGET_PROFILE_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_PROFILE_CUSTOM_Y, &profiles, &img_dsc);
 }
+
 
 static void draw_active_profile(lv_obj_t *canvas, const struct status_state *state) {
     lv_draw_rect_dsc_t rect_white_dsc;
@@ -53,13 +55,14 @@ void draw_profile_status(lv_obj_t *canvas, const struct status_state *state) {
 #endif // CONFIG_NICE_EPAPER_ON
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_PROFILE_BIG) //  && IS_ENABLED(CONFIG_NICE_EPAPER_ON)
-    lv_draw_img_dsc_t img_dsc;
-    lv_draw_img_dsc_init(&img_dsc);
+    lv_draw_image_dsc_t img_dsc;
+    lv_draw_image_dsc_init(&img_dsc);
 
     for (int i = 0; i < 5; i++) {
-        lv_canvas_draw_img(canvas, OFFSET_X + (i * 14), OFFSET_Y,
+        lv_canvas_draw_image(canvas, OFFSET_X + (i * 14), OFFSET_Y,
                            i == state->active_profile_index ? &profile_active : &profile, &img_dsc);
     }
+
 #else
     draw_inactive_profiles(canvas, state);
     draw_active_profile(canvas, state);

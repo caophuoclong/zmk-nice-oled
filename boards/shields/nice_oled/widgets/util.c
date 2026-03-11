@@ -12,16 +12,19 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   static lv_color_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT];
   memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
 
-  lv_img_dsc_t img;
+  lv_image_dsc_t img;
   img.data = (void *)cbuf_tmp;
-  img.header.cf = LV_IMG_CF_TRUE_COLOR;
+  img.header.magic = LV_IMAGE_HEADER_MAGIC;
+  img.header.cf = LV_COLOR_FORMAT_NATIVE;
   img.header.w = CANVAS_HEIGHT;
   img.header.h = CANVAS_HEIGHT;
+  img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t);
 
   lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-  lv_canvas_transform(canvas, &img, 900, LV_IMG_ZOOM_NONE, -1, 0,
+  lv_canvas_transform(canvas, &img, 900, LV_IMAGE_ZOOM_NONE, -1, 0,
                       CANVAS_HEIGHT / 2, CANVAS_HEIGHT / 2, false);
 }
+
 
 void draw_background(lv_obj_t *canvas) {
   lv_draw_rect_dsc_t rect_black_dsc;

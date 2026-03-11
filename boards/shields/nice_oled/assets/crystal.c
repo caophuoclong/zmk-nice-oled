@@ -61,15 +61,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_01 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_01 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_01_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_02
 #define LV_ATTRIBUTE_IMG_CRYSTAL_02
@@ -128,15 +129,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_02 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_02 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_02_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_03
 #define LV_ATTRIBUTE_IMG_CRYSTAL_03
@@ -195,15 +197,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_03 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_03 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_03_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_04
 #define LV_ATTRIBUTE_IMG_CRYSTAL_04
@@ -262,15 +265,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_04 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_04 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_04_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_05
 #define LV_ATTRIBUTE_IMG_CRYSTAL_05
@@ -329,15 +333,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_05 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_05 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_05_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_06
 #define LV_ATTRIBUTE_IMG_CRYSTAL_06
@@ -396,15 +401,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_06 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_06 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_06_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_07
 #define LV_ATTRIBUTE_IMG_CRYSTAL_07
@@ -463,15 +469,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_07 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_07 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_07_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_08
 #define LV_ATTRIBUTE_IMG_CRYSTAL_08
@@ -530,15 +537,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_08 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_08 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_08_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_09
 #define LV_ATTRIBUTE_IMG_CRYSTAL_09
@@ -597,15 +605,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_0
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_09 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_09 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_09_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_10
 #define LV_ATTRIBUTE_IMG_CRYSTAL_10
@@ -664,15 +673,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_1
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_10 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_10 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_10_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_11
 #define LV_ATTRIBUTE_IMG_CRYSTAL_11
@@ -731,15 +741,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_1
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_11 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_11 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_11_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_12
 #define LV_ATTRIBUTE_IMG_CRYSTAL_12
@@ -798,15 +809,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_1
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_12 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_12 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_12_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_13
 #define LV_ATTRIBUTE_IMG_CRYSTAL_13
@@ -865,15 +877,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_1
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_13 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_13 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_13_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_14
 #define LV_ATTRIBUTE_IMG_CRYSTAL_14
@@ -932,15 +945,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_1
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_14 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_14 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_14_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_15
 #define LV_ATTRIBUTE_IMG_CRYSTAL_15
@@ -999,15 +1013,16 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_1
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_15 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_15 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_15_map,
 };
+
 
 #ifndef LV_ATTRIBUTE_IMG_CRYSTAL_16
 #define LV_ATTRIBUTE_IMG_CRYSTAL_16
@@ -1066,12 +1081,13 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CRYSTAL_1
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const lv_img_dsc_t crystal_16 = {
-    .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
+const lv_image_dsc_t crystal_16 = {
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
+    .header.cf = LV_COLOR_FORMAT_I1,
     .header.w = 69,
     .header.h = 68,
+    .header.stride = 9,
     .data_size = 620,
     .data = crystal_16_map,
 };
+
