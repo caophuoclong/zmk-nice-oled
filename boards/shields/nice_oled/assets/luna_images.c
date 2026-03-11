@@ -1374,7 +1374,7 @@ const lv_image_dsc_t dog_bark2_90 = {
   .header.h = 56,
   .header.stride = 6,
   .data_size = 336,
-  .data = dog_bark2_90_map,
+  .data = dog_bark2_map,
 };
 
 const lv_image_dsc_t dog_bark2_180 = {
@@ -1415,7 +1415,7 @@ const lv_image_dsc_t dog_sneak1_90 = {
   .header.h = 56,
   .header.stride = 6,
   .data_size = 336,
-  .data = dog_sneak1_90_map,
+  .data = dog_sneak1_map,
 };
 
 const lv_image_dsc_t dog_sneak1_180 = {
@@ -1456,7 +1456,7 @@ const lv_image_dsc_t dog_sneak2_90 = {
   .header.h = 56,
   .header.stride = 6,
   .data_size = 336,
-  .data = dog_sneak2_90_map,
+  .data = dog_sneak2_map,
 };
 
 const lv_image_dsc_t dog_sneak2_180 = {
